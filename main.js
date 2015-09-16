@@ -11,7 +11,7 @@ $(function() {
         $(gallery_container_id).empty()
         // JSON で取得したデータを img タグにして指定要素に追加挿入
         $.each(data.images, function(index, url) {
-          $('<img/>').attr('src', url).appendTo(gallery_container_id);
+          $('<li class="thumbnail"><a class="modal_trigger" rel="learnModal" href="#modal_' + (index + 1) + '"><img src="' + url + '" alt="" /></li>').appendTo(gallery_container_id);
         })
       }
     });
