@@ -13,6 +13,11 @@ $(function() {
         $.each(data.images, function(index, url) {
           $('<img/>').attr('src', url).appendTo(gallery_container_id);
         })
+
+        // img タグ生成後に囲む
+        $('img').each(function(index, element) {
+          $(element).wrap('<li class="thumbnail"><a class="modal_trigger" rel="learnModal" href="#modal_' + (index + 1) + '"></li>')
+        })
       }
     });
   };
