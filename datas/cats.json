@@ -8,5 +8,37 @@
         "http://lorempixel.com/200/300/cats",
         "http://lorempixel.com/200/300/cats",
         "http://lorempixel.com/200/300/cats"
+    ],
+    "works": [
+        {
+            "img": "http://lorempixel.com/200/300/cats",
+            "info_items": [
+                {
+                    "label": "WORK1 ITEM1 LABEL",
+                    "title": "WORK1 ITEM1 TITLE"
+                },
+                {
+                    "text": "WORK1 ITEM2 TEXT"
+                },
+                {
+                    "text": "WORK1 ITEM3 TEXT"
+                }
+            ]
+        },
+        {
+            "img": "http://lorempixel.com/200/300/cats",
+            "info_items": [
+                {
+                    "label": "WORK2 ITEM1 LABEL",
+                    "title": "WORK2 ITEM1 TITLE"
+                },
+                {
+                    "text": "WORK2 ITEM2 TEXT"
+                },
+                {
+                    "text": "WORK2 ITEM3 TEXT"
+                }
+            ]
+        }
     ]
 }

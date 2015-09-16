@@ -2,6 +2,7 @@
 <html>
   <head>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.2/handlebars.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </head>
   <body>
@@ -18,6 +19,31 @@
       <div id="gallery">
       </div>
 
+      <ul id="work-container"></ul>
+
     </div>
+
+    <script id="work-template" type="text/x-handlebars-template">
+      <li id="modal_{{index}}" class="modal" style="display:none;">
+        <div class="work_information clearfix">
+          <div class="work_img">
+            <img src="{{img}}" alt="作品画像" height="470">
+          </div>
+          <ul class="work_info">
+            {{#each info_items}}
+            <li class="work_info_item">
+              {{#if label}}
+              <p class="work_label">{{label}}</p>
+              <h2 class="work_title">{{title}}</h2>
+              {{/if}}
+              {{#if text}}
+                {{text}}
+              {{/if}}
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </li>
+    </script>
   </body>
 </html>

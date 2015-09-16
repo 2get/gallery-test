@@ -2,6 +2,9 @@ $(function() {
 
   var gallery_container_id = '#gallery';
 
+  var source = $('#work-template').html();
+  var template = Handlebars.compile(source);
+
   var loadJsonAndRenderToGallery = function(json_url) {
     $.ajax({
       url: json_url,
@@ -13,6 +16,14 @@ $(function() {
         $.each(data.images, function(index, url) {
           $('<li class="thumbnail"><a class="modal_trigger" rel="learnModal" href="#modal_' + (index + 1) + '"><img src="' + url + '" alt="" /></li>').appendTo(gallery_container_id);
         })
+
+        // モーダルの内容要素作成
+        $.each(data.works, function(index, work) {
+          var context = work;
+          context.index = index;
+          var html = template(context);
+          $('#work-container').html(html);
+        });
       }
     });
   };
