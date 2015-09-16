@@ -18,11 +18,12 @@ $(function() {
         })
 
         // モーダルの内容要素作成
+        $('#work-container').empty();
         $.each(data.works, function(index, work) {
           var context = work;
-          context.index = index;
+          context.index = index + 1;
           var html = template(context);
-          $('#work-container').html(html);
+          $('#work-container').append(html);
         });
       }
     });
